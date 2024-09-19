@@ -1,0 +1,41 @@
+name: Run Python Script and Upload File
+
+on:
+  schedule:
+    # 每小时执行一次
+    - cron: '0 * * * *'
+  push:
+    branches:
+      - main  # 当推送到主分支时触发工作流
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # 检出代码库内容
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'  # 设置Python版本
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Python script
+        run: |
+          python get_ip.py  # 执行Python脚本
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"  # 配置Git用户信息
+
+      - name: Commit and push changes
+        run: |
+          git add .  # 添加更改的文件
+          git commit -m "Add generated files" || echo "No changes to commit"  # 提交更改，如果没有更改则跳过
+          git push origin main  # 推送到主分支
