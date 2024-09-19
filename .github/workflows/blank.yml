@@ -7,9 +7,8 @@ on:
   push:
     branches:
       - main  # 当推送到主分支时触发工作流
-
-jobs:
-        
+      
+jobs:  
   run-script:
     runs-on: ubuntu-latest
     env:
