@@ -37,6 +37,8 @@ jobs:
           git config user.email "github-actions@github.com"  # 配置Git用户信息
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
           git add .  # 添加更改的文件
           git commit -m "Add generated files" || echo "No changes to commit"  # 提交更改，如果没有更改则跳过
