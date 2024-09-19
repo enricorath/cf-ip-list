@@ -40,9 +40,4 @@ jobs:
         run: |
           git add .  # 添加更改的文件
           git commit -m "Add generated files" || echo "No changes to commit"  # 提交更改，如果没有更改则跳过
-          # git push origin main  # 推送到主分支
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          git push origin main  # 推送到主分支
