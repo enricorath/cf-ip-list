@@ -9,9 +9,12 @@ on:
       - main  # 当推送到主分支时触发工作流
 
 jobs:
+        
   run-script:
     runs-on: ubuntu-latest
-
+    env:
+      REPO_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      TARGET_BRANCH: "main"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3  # 检出代码库内容
@@ -35,9 +38,7 @@ jobs:
           git config user.email "github-actions@github.com"  # 配置Git用户信息
 
       - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ env.MY_GITHUB_TOKEN }}
         run: |
           git add .  # 添加更改的文件
           git commit -m "Add generated files" || echo "No changes to commit"  # 提交更改，如果没有更改则跳过
-          git push origin main  # 推送到主分支
+          git push origin $TARGET_BRANCH  # 推送到主分支
