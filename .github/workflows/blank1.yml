@@ -33,7 +33,8 @@ jobs:
           git config --global user.email "your-email@example.com"
           git config --global user.name "github-actions[bot]"
           git add .
-          git commit -m "update ip"
+          git commit -m "update proxyip"
+          git pull
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
