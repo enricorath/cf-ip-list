@@ -34,15 +34,15 @@ def get_cf_proxyip():
 				for i in news_text:
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json',headers=headers).json()
 					print(ip_info)
-					tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
+					# tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
 			else:
 				for i in news_text:
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json',headers=headers).json()
 					print(ip_info)
-					tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
+					# notls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
 			file.close()
 	    
-	file_info={'cloudflare-proxyip':json1,'cloudflare-proxyip-notls':json2}
+	file_info={'cloudflare-proxyip':tls_json,'cloudflare-proxyip-notls':notls_json}
 	for filename,ip_info in file_info:
 		ips=''
 		for j in ip_info:
