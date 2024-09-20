@@ -27,6 +27,7 @@ def get_cf_proxyip():
 	    ports=re.split(r'-',file_path.stem)[-1]
 	    with open(file_path,'r',encoding='utf-8') as file:
 	    	text=file.read()
+			print(f'{ports}\n{text}')
 	    	# news_text=text.replace('\n',f':{ports}\n')
 	    	news_text=re.split(r'\n',text)
 	    	if ports=='443':
@@ -38,7 +39,7 @@ def get_cf_proxyip():
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json').json()
 					tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
 	    	file.close()
-	    print(f'{ports}\n{text}')
+	    
 	file_info={'cloudflare-proxyip':json1,'cloudflare-proxyip-notls':json2}
 	for filename,ip_info in file_info:
 		ips=''
