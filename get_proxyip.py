@@ -1,6 +1,7 @@
 import requests
 import ipaddress
 import os
+import shutil
 import json
 import random
 import zipfile
@@ -58,5 +59,5 @@ def get_cf_proxyip():
 			file.write(ips)
 			file.close()
 	os.remove('./cloudflare.zip')
-	os.remkdir('./cf')
+	shutil.rmtree('./cf')
 get_cf_proxyip()
