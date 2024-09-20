@@ -38,14 +38,14 @@ def get_cf_proxyip():
 					country=ip_info['country']
 					city=ip_info['city']
 					org=ip_info['org']
-					tls_json.append({'ip':i,'port':ports,'colo':f'{country}-{city}-{org}'})
+					tls_json.append({'ip':i,'port':ports,'colo':f'{country}'})
 			else:
 				for i in news_text:
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json',headers=headers).json()
 					country=ip_info['country']
 					city=ip_info['city']
 					org=ip_info['org']
-					notls_json.append({'ip':i,'port':ports,'colo':f'{country}-{city}-{org}'})
+					notls_json.append({'ip':i,'port':ports,'colo':f'{country}'})
 			file.close()
 	del tls_json[-1]
 	del notls_json[-1]
