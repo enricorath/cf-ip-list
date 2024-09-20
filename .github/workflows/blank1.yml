@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git add .
           git commit -m "update proxyip"
-          git pull
+          git config --global pull.rebase false
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
