@@ -26,17 +26,19 @@ def get_cf_proxyip():
 	for file_path in folder_path.rglob('*'):
 	    ports=re.split(r'-',file_path.stem)[-1]
 	    with open(file_path,'r',encoding='utf-8') as file:
-	    	text=file.read()
+			text=file.read()
 			print(f'{ports}\n{text}')
-	    	# news_text=text.replace('\n',f':{ports}\n')
-	    	news_text=re.split(r'\n',text)
-	    	if ports=='443':
-	    		for i in news_text:
-	    			ip_info=requests.get(f'https://ipinfo.io/{i}/json').json()
-	    			tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
-	    	else:
+			# news_text=text.replace('\n',f':{ports}\n')
+			news_text=re.split(r'\n',text)
+			if ports=='443':
 				for i in news_text:
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json').json()
+					print(ip_info)
+					tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
+			else:
+				for i in news_text:
+					ip_info=requests.get(f'https://ipinfo.io/{i}/json').json()
+					print(ip_info)
 					tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
 	    	file.close()
 	    
