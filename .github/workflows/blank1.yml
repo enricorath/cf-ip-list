@@ -2,7 +2,8 @@ name: Run Python Script and Upload proxyip file
 
 on:
   schedule:
-    - '0 */8 * * *'  # 每 8 小时执行一次
+    # 每8个小时执行一次
+    - cron: '0 */8 * * *'
   push:
     branches:
       - main  # 当推送到主分支时触发工作流
