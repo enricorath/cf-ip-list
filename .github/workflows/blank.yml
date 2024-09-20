@@ -32,8 +32,9 @@ jobs:
         run: |
           git config --global user.email "your-email@example.com"
           git config --global user.name "github-actions[bot]"
+          git pull origin main
           git add .
           git commit -m "update ip"
-          git push
+          git push --force origin main
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}

@@ -46,7 +46,8 @@ def get_cf_proxyip():
 					org=ip_info['org']
 					notls_json.append({'ip':i,'port':ports,'colo':f'{country}-{city}-{org}'})
 			file.close()
-	    
+	del tls_json[-1]
+	del notls_json[-1]
 	file_info={'cloudflare-proxyip':tls_json,'cloudflare-proxyip-notls':notls_json}
 	for filename,ip_info1 in file_info.items():
 		ips=''
