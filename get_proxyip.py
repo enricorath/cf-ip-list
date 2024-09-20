@@ -31,6 +31,7 @@ def get_cf_proxyip():
 			print(f'{ports}\n{text}')
 			# news_text=text.replace('\n',f':{ports}\n')
 			news_text=re.split(r'\n',text)
+			del news_text[-1]
 			if ports=='443':
 				for i in news_text:
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json',headers=headers).json()
