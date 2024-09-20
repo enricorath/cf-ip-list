@@ -235,7 +235,6 @@
 132.145.81.117:443#KR-Paripark-AS31898 Oracle Corporation
 132.145.95.91:443#KR-Paripark-AS31898 Oracle Corporation
 193.123.39.210:443#NL-Amsterdam-AS31898 Oracle Corporation
-:443#US-Ashburn-AS8075 Microsoft Corporation
 47.254.65.110:443#US-Sunnyvale-AS45102 Alibaba (US) Technology Co., Ltd.
 8.210.92.27:443#HK-Hong Kong-AS45102 Alibaba (US) Technology Co., Ltd.
 8.209.217.106:443#JP-Tokyo-AS45102 Alibaba (US) Technology Co., Ltd.
@@ -245,4 +244,3 @@
 47.57.13.107:443#HK-Hong Kong-AS45102 Alibaba (US) Technology Co., Ltd.
 47.88.15.127:443#US-San Jose-AS45102 Alibaba (US) Technology Co., Ltd.
 47.243.118.63:443#HK-Hong Kong-AS45102 Alibaba (US) Technology Co., Ltd.
-8.222.67.79:443#JP-Tokyo-AS45102 Alibaba (US) Technology Co., Ltd.
