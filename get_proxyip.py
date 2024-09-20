@@ -32,12 +32,10 @@ def get_cf_proxyip():
 	    	if ports=='443':
 	    		for i in news_text:
 	    			ip_info=requests.get(f'https://ipinfo.io/{i}/json').json()
-					print(ip_info)
 	    			tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
 	    	else:
 				for i in news_text:
 					ip_info=requests.get(f'https://ipinfo.io/{i}/json').json()
-					print(ip_info)
 					tls_json.append({'ip':i,'port':ports,'colo':f'{ip_info['country']}-{ip_info['city']}-{ip_info['org']}'})
 	    	file.close()
 	    print(f'{ports}\n{text}')
