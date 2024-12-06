@@ -1,3 +1,7 @@
+93.123.17.187:443#am3-hw-edge-gc116
 92.223.124.45:443#fr5-hw-edge-gpig-gc53
-93.123.17.151:443#am3-hw-edge-gpig-gc96
 92.223.120.10:443#sv5-hw-edge-gpig-gc10
+92.223.120.10:443#sv5-hw-edge-gpig-gc10
+93.123.17.187:443#am3-hw-edge-gc116
+92.223.124.45:443#fr5-hw-edge-gpig-gc53
+[2a03:90c0:1a1:2801::6]:443#la2-hw-edge-gpig-gc6
