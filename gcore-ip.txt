@@ -1,10 +1,11 @@
 92.223.120.10:443#sv5-hw-edge-gpig-gc10
 92.223.124.45:443#fr5-hw-edge-gpig-gc53
-93.123.17.187:443#am3-hw-edge-gpig-gc96
-92.223.120.10:443#sv5-hw-edge-gpig-gc10
 93.123.17.151:443#am3-hw-edge-gpig-gc96
+92.223.120.10:443#sv5-hw-edge-gpig-gc10
+93.123.17.151:443#am3-hw-edge-gc116
 [2a03:90c0:11:2801::151]:443#am3-hw-edge-gpig-gc96
 [2a03:90c0:1a1:2801::6]:443#la2-hw-edge-gpig-gc6
 [2a03:90c0:21:2801::10]:443#sv5-hw-edge-gpig-gc10
+[2a03:90c0:f1:2801::20]:443#hk2-hw-edge-gpig-gc20
 [2a03:90c0:1a1:2801::6]:443#la2-hw-edge-gpig-gc6
-[2a03:90c0:21:2801::10]:443#sv5-hw-edge-gpig-gc10
+[2a03:90c0:41:2801::45]:443#fr5-hw-edge-gpig-gc53
